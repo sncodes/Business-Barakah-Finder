@@ -88,8 +88,8 @@ const Home = () => {
         className="h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-neutral-50 snap-start"
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="mb-6 animate-float">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-secondary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-secondary mx-auto animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </div>
@@ -104,9 +104,9 @@ const Home = () => {
               <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </button>
-          <div className="mt-12 animate-bounce">
+          <div className="mt-12">
             <button onClick={() => scrollToSection(1)} aria-label="Scroll down" className="text-neutral-400">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </button>
@@ -135,7 +135,7 @@ const Home = () => {
             </div>
             <div className="flex justify-center mt-10">
               <button onClick={() => scrollToSection(2)} aria-label="Next section" className="text-primary hover:text-primary-dark transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </button>
@@ -186,7 +186,7 @@ const Home = () => {
           </div>
           <div className="flex justify-center mt-10">
             <button onClick={() => scrollToSection(3)} aria-label="Next section" className="text-primary hover:text-primary-dark transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </button>
