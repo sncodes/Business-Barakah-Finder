@@ -1,0 +1,9 @@
+[[headers]]
+  for = "/src/*.tsx"
+    [headers.values]
+      Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/src/*.js"
+    [headers.values]
+      Content-Type = "application/javascript"
