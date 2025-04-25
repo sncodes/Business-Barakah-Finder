@@ -85,7 +85,7 @@ const Home = () => {
       {/* Section 1: Hero */}
       <section 
         ref={(el) => (sectionsRef.current[0] = el)}
-        className="h-screen w-full flex items-center justify-center bg-gradient-to-b from-white to-neutral-50 snap-start"
+        className="h-screen w-full flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800 text-white snap-start"
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="mb-6">
@@ -93,8 +93,8 @@ const Home = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </div>
-          <h1 className="text-4xl md:text-6xl font-raleway font-bold text-primary mb-6">Business Barakah Finder</h1>
-          <p className="text-xl md:text-2xl text-neutral-600 mb-8">Find ethical support resources for your business journey</p>
+          <h1 className="text-4xl md:text-6xl font-raleway font-bold text-white mb-6">Business Barakah Finder</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8">Find ethical support resources for your business journey</p>
           <button 
             onClick={handleStart}
             className="bg-primary hover:bg-primary-light text-white font-medium py-4 px-8 rounded-full transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -105,7 +105,7 @@ const Home = () => {
             </svg>
           </button>
           <div className="mt-12">
-            <button onClick={() => scrollToSection(1)} aria-label="Scroll down" className="text-neutral-400">
+            <button onClick={() => scrollToSection(1)} aria-label="Scroll down" className="text-gray-300 hover:text-white transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
@@ -117,7 +117,7 @@ const Home = () => {
       {/* Section 2: What is Barakah */}
       <section 
         ref={(el) => (sectionsRef.current[1] = el)}
-        className="h-screen w-full flex items-center justify-center arabian-pattern snap-start"
+        className="h-screen w-full flex items-center justify-center bg-slate-800 snap-start"
       >
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white/95 p-8 md:p-12 rounded-xl shadow-xl">
@@ -147,10 +147,10 @@ const Home = () => {
       {/* Section 3: How it works */}
       <section 
         ref={(el) => (sectionsRef.current[2] = el)}
-        className="h-screen w-full flex items-center justify-center bg-gradient-to-b from-neutral-50 to-white snap-start"
+        className="h-screen w-full flex items-center justify-center bg-slate-900 snap-start"
       >
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-raleway font-bold text-primary mb-10 text-center">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-raleway font-bold text-white mb-10 text-center">How It Works</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary transition-transform hover:scale-105">
               <div className="flex items-center mb-4">
@@ -185,7 +185,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center mt-10">
-            <button onClick={() => scrollToSection(3)} aria-label="Next section" className="text-primary hover:text-primary-dark transition-colors">
+            <button onClick={() => scrollToSection(3)} aria-label="Next section" className="text-gray-300 hover:text-white transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
@@ -197,7 +197,7 @@ const Home = () => {
       {/* Section 4: Call to action */}
       <section 
         ref={(el) => (sectionsRef.current[3] = el)}
-        className="h-screen w-full flex items-center justify-center bg-gradient-to-t from-primary/10 to-white snap-start"
+        className="h-screen w-full flex items-center justify-center bg-slate-800 snap-start"
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-raleway font-bold text-primary mb-6">Ready to Find Your Perfect Match?</h2>
