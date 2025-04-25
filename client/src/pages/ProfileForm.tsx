@@ -34,7 +34,7 @@ const ProfileForm = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const response = await apiRequest("POST", "/api/business-profile", data);
+      const response = await apiRequest("POST", "/.netlify/functions/business-profile", data);
       if (response.ok) {
         navigate("/processing");
       } else {
