@@ -100,17 +100,34 @@ export const storage = {
       }
     }
     
-    // Insert matches into database
-    const insertedMatches = await db.insert(matches)
-      .values(matchEntries)
-      .returning();
+    // Insert matches into database only if there are valid matches
+    let insertedMatches: Match[] = [];
     
-    // Update matches with insights
-    for (const match of insertedMatches) {
-      if (matchedInsights[match.supportResourceId]) {
-        await db.update(matches)
-          .set({ insights: matchedInsights[match.supportResourceId] })
-          .where(eq(matches.id, match.id));
+    if (matchEntries.length > 0) {
+      insertedMatches = await db.insert(matches)
+        .values(matchEntries)
+        .returning();
+      
+      // Update matches with insights
+      for (const match of insertedMatches) {
+        if (matchedInsights[match.supportResourceId]) {
+          await db.update(matches)
+            .set({ insights: matchedInsights[match.supportResourceId] })
+            .where(eq(matches.id, match.id));
+        }
+      }
+    } else {
+      // If no matches meet the criteria, use a default match with the first resource
+      if (allResources.length > 0) {
+        const defaultMatch = {
+          businessProfileId,
+          supportResourceId: allResources[0].id,
+          matchScore: 50
+        };
+        
+        insertedMatches = await db.insert(matches)
+          .values(defaultMatch)
+          .returning();
       }
     }
     
@@ -158,10 +175,12 @@ export const storage = {
       }
     }
     
-    // Update the matches with combined insights
-    await db.update(matches)
-      .set({ insights: allInsights })
-      .where(eq(matches.businessProfileId, businessProfileId));
+    // If we have any matches, update them with combined insights
+    if (matchResults.length > 0) {
+      await db.update(matches)
+        .set({ insights: allInsights })
+        .where(eq(matches.businessProfileId, businessProfileId));
+    }
     
     return allInsights;
   },

@@ -156,15 +156,14 @@ async function seed() {
     ];
 
     // Check if support resources already exist
-    const existingResources = await db.select({ count: { value: supportResources.id.count() } })
-      .from(supportResources);
+    const existingResources = await db.select().from(supportResources);
     
-    if (existingResources[0].count.value === 0) {
+    if (existingResources.length === 0) {
       console.log("Inserting support resources...");
       await db.insert(supportResources).values(supportData);
       console.log(`✅ Inserted ${supportData.length} support resources`);
     } else {
-      console.log(`⏭️ Skipping support resources seeding, ${existingResources[0].count.value} resources already exist`);
+      console.log(`⏭️ Skipping support resources seeding, ${existingResources.length} resources already exist`);
     }
 
     console.log("✅ Seeding completed successfully");
