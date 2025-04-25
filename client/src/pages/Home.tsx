@@ -200,8 +200,8 @@ const Home = () => {
         className="h-screen w-full flex items-center justify-center bg-slate-800 snap-start"
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-raleway font-bold text-primary mb-6">Ready to Find Your Perfect Match?</h2>
-          <p className="text-xl text-neutral-600 mb-10 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-raleway font-bold text-white mb-6">Ready to Find Your Perfect Match?</h2>
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
             Start your journey today to discover ethical business support resources that align with your values and help your business grow with Barakah.
           </p>
           <button 
@@ -217,8 +217,8 @@ const Home = () => {
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-primary mb-2">Ethical</h3>
-              <p className="text-neutral-600">Resources that align with ethical financing principles</p>
+              <h3 className="text-lg font-medium text-white mb-2">Ethical</h3>
+              <p className="text-gray-300">Resources that align with ethical financing principles</p>
             </div>
             <div className="p-4">
               <div className="w-16 h-16 mx-auto bg-secondary/20 rounded-full flex items-center justify-center mb-4">
@@ -226,8 +226,8 @@ const Home = () => {
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-primary mb-2">Personalised</h3>
-              <p className="text-neutral-600">Tailored to your unique business profile and needs</p>
+              <h3 className="text-lg font-medium text-white mb-2">Personalised</h3>
+              <p className="text-gray-300">Tailored to your unique business profile and needs</p>
             </div>
             <div className="p-4">
               <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center mb-4">
@@ -235,8 +235,8 @@ const Home = () => {
                   <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-primary mb-2">Growth-focused</h3>
-              <p className="text-neutral-600">Resources designed to help your business thrive</p>
+              <h3 className="text-lg font-medium text-white mb-2">Growth-focused</h3>
+              <p className="text-gray-300">Resources designed to help your business thrive</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,6 +15,7 @@ const AdvisorContactModal = ({ isOpen, onClose }: AdvisorContactModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
@@ -36,6 +38,7 @@ const AdvisorContactModal = ({ isOpen, onClose }: AdvisorContactModalProps) => {
       setName("");
       setEmail("");
       setCompany("");
+      setMessage("");
       onClose();
     } catch (error) {
       toast({
@@ -102,6 +105,19 @@ const AdvisorContactModal = ({ isOpen, onClose }: AdvisorContactModalProps) => {
                 required
                 className="w-full rounded-md border-neutral-300"
                 placeholder="Your company name"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">
+                Your Message
+              </Label>
+              <Textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full rounded-md border-neutral-300 min-h-[100px]"
+                placeholder="Please describe your business needs and any specific questions you have"
               />
             </div>
           </div>
