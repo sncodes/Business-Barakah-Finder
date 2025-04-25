@@ -64,8 +64,8 @@ const ProfileForm = () => {
   ];
 
   return (
-    <section className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
-      <h2 className="text-2xl font-raleway font-semibold text-primary mb-6">Tell Us About Your Business</h2>
+    <section className="bg-slate-800 rounded-lg shadow-md p-6 md:p-8 mb-8">
+      <h2 className="text-2xl font-raleway font-semibold text-white mb-6">Tell Us About Your Business</h2>
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -77,7 +77,7 @@ const ProfileForm = () => {
                 name="businessType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Business Type <span className="text-red-500">*</span></FormLabel>
+                    <FormLabel className="text-gray-200">Business Type <span className="text-red-500">*</span></FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -92,7 +92,7 @@ const ProfileForm = () => {
                         <SelectItem value="family-business">Family Business</SelectItem>
                       </SelectContent>
                     </Select>
-                    <FormDescription>
+                    <FormDescription className="text-gray-300">
                       This helps us understand your stage and structure
                     </FormDescription>
                     <FormMessage />
@@ -106,7 +106,7 @@ const ProfileForm = () => {
                 name="industrySector"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Industry Sector <span className="text-red-500">*</span></FormLabel>
+                    <FormLabel className="text-gray-200">Industry Sector <span className="text-red-500">*</span></FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -137,7 +137,7 @@ const ProfileForm = () => {
                 name="teamSize"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Team Size <span className="text-red-500">*</span></FormLabel>
+                    <FormLabel className="text-gray-200">Team Size <span className="text-red-500">*</span></FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -165,7 +165,7 @@ const ProfileForm = () => {
                 name="fundingStage"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Funding Stage or Revenue <span className="text-red-500">*</span></FormLabel>
+                    <FormLabel className="text-gray-200">Funding Stage or Revenue <span className="text-red-500">*</span></FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -192,7 +192,7 @@ const ProfileForm = () => {
                 render={() => (
                   <FormItem>
                     <div className="mb-2">
-                      <FormLabel>Growth Goals (Select all that apply) <span className="text-red-500">*</span></FormLabel>
+                      <FormLabel className="text-gray-200">Growth Goals (Select all that apply) <span className="text-red-500">*</span></FormLabel>
                     </div>
                     <div className="space-y-2">
                       {growthGoalOptions.map((option) => (
@@ -220,7 +220,7 @@ const ProfileForm = () => {
                                     }}
                                   />
                                 </FormControl>
-                                <FormLabel className="font-normal">
+                                <FormLabel className="font-normal text-gray-200">
                                   {option.label}
                                 </FormLabel>
                               </FormItem>
@@ -240,7 +240,7 @@ const ProfileForm = () => {
                 name="notes"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Any specific challenges or requirements? (Optional)</FormLabel>
+                    <FormLabel className="text-gray-200">Any specific challenges or requirements? (Optional)</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Tell us about any specific needs or challenges..."
