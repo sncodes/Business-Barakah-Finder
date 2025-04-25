@@ -31,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
-                Business Baraka Finder
+                Business Barakah Finder
               </Link>
               <p className="text-neutral-600 mt-2">Ethically-guided business support matching for your journey</p>
             </div>
@@ -55,7 +55,7 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Footer */}
           <footer className="mt-12 pt-6 border-t border-neutral-200 text-neutral-500 text-sm flex flex-col md:flex-row justify-between items-center">
             <div>
-              <p>© {new Date().getFullYear()} Business Baraka Finder. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} Business Barakah Finder. All rights reserved.</p>
             </div>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link href="/" className="hover:text-primary">Privacy Policy</Link>
