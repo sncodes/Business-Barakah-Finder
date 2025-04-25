@@ -8,6 +8,7 @@ import ProfileForm from "@/pages/ProfileForm";
 import ProcessingScreen from "@/pages/ProcessingScreen";
 import ResultsPage from "@/pages/ResultsPage";
 import Layout from "@/components/Layout";
+import MatchesPage from '../MatchesPage'; // ADD THIS LINE
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
         <Route path="/profile" component={ProfileForm} />
         <Route path="/processing" component={ProcessingScreen} />
         <Route path="/results" component={ResultsPage} />
+        <Route path="/matches" component={MatchesPage} /> {/* ADD THIS LINE */}
         <Route component={NotFound} />
       </Switch>
     </Layout>
