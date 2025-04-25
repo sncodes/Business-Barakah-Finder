@@ -1,3 +1,6 @@
+[functions]
+  directory = "netlify2/functions"
+
 [[headers]]
   for = "/src/*.tsx"
     [headers.values]
