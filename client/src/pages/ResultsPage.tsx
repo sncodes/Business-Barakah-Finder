@@ -70,12 +70,12 @@ const ResultsPage = () => {
 
   if (isLoading) {
     return (
-      <section className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8 text-center">
+      <section className="bg-slate-800 rounded-lg shadow-md p-6 md:p-8 mb-8 text-center">
         <div className="py-10">
-          <div className="inline-block p-4 rounded-full bg-neutral-100 mb-6">
-            <div className="w-16 h-16 border-4 border-t-primary border-neutral-200 rounded-full animate-spin"></div>
+          <div className="inline-block p-4 rounded-full bg-slate-700 mb-6">
+            <div className="w-16 h-16 border-4 border-t-primary border-slate-600 rounded-full animate-spin"></div>
           </div>
-          <h2 className="text-2xl font-raleway font-semibold text-primary mb-4">Loading Your Results</h2>
+          <h2 className="text-2xl font-raleway font-semibold text-primary mb-4 text-gray-200">Loading Your Results</h2>
         </div>
       </section>
     );
@@ -83,13 +83,13 @@ const ResultsPage = () => {
 
   if (isError || !data) {
     return (
-      <section className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8 text-center">
+      <section className="bg-slate-800 rounded-lg shadow-md p-6 md:p-8 mb-8 text-center">
         <div className="py-10">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-red-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
-          <h2 className="text-2xl font-raleway font-semibold text-primary mb-4">Error Loading Results</h2>
-          <p className="text-neutral-600 max-w-md mx-auto mb-6">
+          <h2 className="text-2xl font-raleway font-semibold text-primary mb-4 text-gray-200">Error Loading Results</h2>
+          <p className="text-gray-300 max-w-md mx-auto mb-6">
             We encountered an issue retrieving your results. Please try again.
           </p>
           <Button onClick={handleStartOver}>Start Over</Button>
@@ -103,11 +103,11 @@ const ResultsPage = () => {
   return (
     <>
       <section>
-        <div className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+        <div className="bg-slate-800 rounded-lg shadow-md p-6 md:p-8 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <div>
-              <h2 className="text-2xl font-raleway font-semibold text-primary">Your Recommended Support Options</h2>
-              <p className="text-neutral-600 mt-1">Based on your business profile, we've found these opportunities</p>
+              <h2 className="text-2xl font-raleway font-semibold text-primary text-gray-200">Your Recommended Support Options</h2>
+              <p className="text-gray-300 mt-1">Based on your business profile, we've found these opportunities</p>
             </div>
             <div className="mt-4 md:mt-0 flex flex-wrap gap-2">
               <Button 
