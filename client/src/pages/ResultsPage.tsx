@@ -5,12 +5,14 @@ import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import EmailModal from "@/components/EmailModal";
+import AdvisorContactModal from "@/components/AdvisorContactModal";
 import { Support } from "@shared/schema";
 
 const ResultsPage = () => {
   const [, navigate] = useLocation();
   const { toast } = useToast();
   const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [advisorModalOpen, setAdvisorModalOpen] = useState(false);
 
   // Fetch match results
   const { data, isLoading, isError } = useQuery<{
@@ -58,11 +60,8 @@ const ResultsPage = () => {
     }
   };
 
-  const handleContactAdvisor = async () => {
-    toast({
-      title: "Thank you",
-      description: "An advisor will contact you shortly.",
-    });
+  const handleContactAdvisor = () => {
+    setAdvisorModalOpen(true);
   };
 
   const handlePrint = () => {
@@ -222,15 +221,40 @@ const ResultsPage = () => {
               </svg>
             </div>
             <div>
-              <h3 className="font-raleway font-semibold text-xl text-primary mb-2">Personalized Insights</h3>
+              <h3 className="font-raleway font-semibold text-xl text-primary mb-2">Personalised Insights</h3>
               <p className="text-neutral-700 mb-4">
                 Based on your profile as a {businessProfile && businessProfile.businessType} in the {businessProfile && businessProfile.industrySector} sector with {businessProfile && businessProfile.teamSize} employees seeking {businessProfile && businessProfile.growthGoals && businessProfile.growthGoals.join(' and ')}, here are some key insights:
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-neutral-600">
-                {insights && insights.map((insight, index) => (
-                  <li key={index}>{insight}</li>
-                ))}
-              </ul>
+              
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-neutral-50 p-4 rounded-lg">
+                  <h4 className="font-raleway font-semibold text-lg text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                    </svg>
+                    Business Growth
+                  </h4>
+                  <ul className="list-disc pl-5 space-y-2 text-neutral-600">
+                    {insights && insights.slice(0, Math.ceil(insights.length / 2)).map((insight, index) => (
+                      <li key={index}>{insight}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="bg-neutral-50 p-4 rounded-lg">
+                  <h4 className="font-raleway font-semibold text-lg text-primary mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    Ethical Considerations
+                  </h4>
+                  <ul className="list-disc pl-5 space-y-2 text-neutral-600">
+                    {insights && insights.slice(Math.ceil(insights.length / 2)).map((insight, index) => (
+                      <li key={index}>{insight}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -260,6 +284,7 @@ const ResultsPage = () => {
       </section>
 
       <EmailModal isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
+      <AdvisorContactModal isOpen={advisorModalOpen} onClose={() => setAdvisorModalOpen(false)} />
     </>
   );
 };
